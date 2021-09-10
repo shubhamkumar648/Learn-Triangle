@@ -1,21 +1,28 @@
-const value1 = document.querySelector("#side-one")
-const value2 = document.querySelector("#side-two")
-const outputEl = document.querySelector("#out-put")
-const btnSubmit = document.querySelector("#check-answer")
+const input1 = document.querySelector("#side-one");
+const input2 = document.querySelector("#side-two");
+const outputEl = document.querySelector("#out-put");
+const btnSubmit = document.querySelector("#check-answer");
 
- const calculateSumofHypotneous = (num1,num2) => {
+const calculateSumofHypotneous = (num1, num2) => {
+  const sum = (num1 * num1) + (num2 * num2);
 
-const sum = (num1*num1) + (num2*num2)
-   return sum
+  const lengthofHypotaneous = Math.sqrt(sum);
 
- }
+  outputEl.innerText = `the length of Hypotaneous ${lengthofHypotaneous}`;
+};
 
+const calculateHypotoneous = () => {
+  var base = Number(input1.value);
 
- const calculateHypotoneous = () => {
+  var height = Number(input2.value);
 
-    const sum = calculateSumofHypotneous(Number(value1.value),Number(value2.value))
-    const lengthofHypotaneous = Math.sqrt(sum)
-    outputEl.innerText = `the length of Hypotaneous ${lengthofHypotaneous}`
- }
+  if (base == "" || height == "") {
+    outputEl.innerText = "please enter all value";
+  } else if (base < 0 && height < 0) {
+    outputEl.innerText = "please enter positive value";
+  } else {
+    calculateSumofHypotneous(base, height);
+  }
+};
 
-btnSubmit.addEventListener("click" , calculateHypotoneous)
+btnSubmit.addEventListener("click", calculateHypotoneous);

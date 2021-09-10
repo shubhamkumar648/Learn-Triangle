@@ -10,20 +10,20 @@ box-sizing: border-box;
 body {
 display: flex;
 flex-direction: column;
+background-color: #dddddd;
 
 }
 
 .mainContainer{
 
     text-align: center;
-    background-color: lightskyblue;
+    /* background-color: lightskyblue; */
 
 }
 
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
   }
   
   li {
@@ -43,12 +43,11 @@ ul {
 
     margin: 0 auto;
     padding: 2rem;
-    background-color: lightgreen;
+    
 }
 
 .hypotaneous-container{
 
-    background-color: lightcoral;
     padding: 2rem;
     margin: 0 auto;
     width: 50vh;
@@ -56,7 +55,6 @@ ul {
 
 .quiz-container {
 
-    background-color: lightsalmon;
     padding: 2rem;
     margin: 0 auto;
 

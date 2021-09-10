@@ -5,30 +5,44 @@ const inputs = document.querySelectorAll(".angle-input");
 const checkButton = document.querySelector("#check-btn");
 const OutputEL = document.querySelector("#text-Display");
 
- const calculateSumofTriangle = (angle1, angle2, angle3) => {
+const calculateSumofTriangle = (angle1, angle2, angle3) => {
 
-   const sumOfAngles = angle1 + angle2 + angle3;
-   
-   return sumOfAngles;
+  const sumOfAngles = angle1 + angle2 + angle3;
 
-};
-
-const isTriangle = () => {
-
-  console.log(inputs[0].value,inputs[1].value,inputs[2].value);
-  let sumOfAngles = calculateSumofTriangle(
-    Number(inputs[0].value),
-    Number(inputs[1].value),
-    Number(inputs[2].value)
-  );
-  if(sumOfAngles === 180) {
+  if (sumOfAngles === 180) {
     // console.log("yes its is form");
     OutputEL.innerText = "yes it form  a triangle";
   } else {
-    // console.log("no its is form");
-
-    OutputEL.innerText = "oops it is not form a triangle";
+    OutputEL.innerText = "no it is not form a triangle";
   }
+}
+
+
+const isTriangle = () => {
+  //console.log(inputs[0].value,inputs[1].value,inputs[2].value);
+  
+    var angle1 =Number(inputs[0].value)
+    var angle2 =Number(inputs[1].value) 
+    var angle3 =Number(inputs[2].value)
+
+    //set check for empty string
+  
+  if( angle1 == "" || angle2 == "" || angle3 == "")
+{
+
+  OutputEL.innerText = "please enter all the value";
+
+}
+
+ else if( angle1 <0 || angle2<0 || angle3 < 0)
+{
+    OutputEL.innerText = "please enter positive value";
+  }
+   else {
+    
+    calculateSumofTriangle(angle1,angle2,angle3)
+
+   }
 };
 
 checkButton.addEventListener("click", isTriangle);
